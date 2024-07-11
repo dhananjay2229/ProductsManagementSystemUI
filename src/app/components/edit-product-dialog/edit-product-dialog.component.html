@@ -1,0 +1,66 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" #modal>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{data?.title}}</h5>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="ProductForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group mb-2">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" formControlName="name"
+                            [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+
+                        @if(submitted && f['name'].errors)
+                        {
+                        <div class="invalid-feedback">
+                            @if (f['name'].errors['required'])
+                            {
+                            <div>Name is required</div>
+                            }
+                        </div>
+                        }
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="price">Price:</label>
+                        <input type="text" class="form-control" formControlName="price"
+                            [ngClass]="{ 'is-invalid': submitted && f['price'].errors }">
+
+                        @if(submitted && f['price'].errors)
+                        {
+                        <div class="invalid-feedback">
+                            @if (f['price'].errors['required'])
+                            {
+                            <div>Price is required</div>
+                            }
+                        </div>
+                        }
+                    </div>
+                    <div class="form-group mb-2">
+                        <label for="quantity">Quantity:</label>
+                        <input type="quantity" class="form-control" formControlName="quantity"
+                            [ngClass]="{ 'is-invalid': submitted && f['quantity'].errors }">
+
+                        @if (submitted && f['quantity'].errors)
+                        {
+                        <div class="invalid-feedback">
+
+                            @if (f['quantity'].errors['required'])
+                            {
+                            <div>Quantity is required</div>
+                            }
+
+                        </div>
+                        }
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-outline-dark m-1" (click)="onCancel()"> Cancel</button>
+                <button type="submit" class="btn btn-sm btn-outline-dark m-1" (click)="onSubmit()" cdkFocusInitial>
+                    Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
