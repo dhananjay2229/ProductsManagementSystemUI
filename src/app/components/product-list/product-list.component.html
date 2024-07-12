@@ -1,6 +1,6 @@
 <h2 class="mb-4"> Products </h2>
 <div class="col mb-4">
-    <button type="button" class="btn btn-sm btn-outline-dark m-1" (click)="addProduct()">
+    <button type="button" class="btn btn-sm btn-success m-1" (click)="addProduct()">
         <i class="bi"></i> New
     </button>
 </div>
@@ -24,11 +24,11 @@
             <td>{{Product.price}}</td>
             <td>{{Product.quantity}}</td>
             <td>
-                <button type="button" class="btn btn-sm btn-outline-dark" (click)="editProduct(Product)">
+                <button type="button" class="btn btn-sm btn-warning m-1" (click)="editProduct(Product)">
                       Edit</button>
             </td>
             <td>
-                <button (click)="deleteProduct(Product.id)" type="button" class="btn btn-sm btn-outline-dark m-1"> 
+                <button (click)="deleteProduct(Product.id)" type="button" class="btn btn-sm btn-danger m-1"> 
                      Delete</button>
             </td>
         </tr>
